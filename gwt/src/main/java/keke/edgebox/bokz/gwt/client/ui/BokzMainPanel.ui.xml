@@ -1,0 +1,61 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+  xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:k='urn:import:keke.edgebox.bokz.gwt.client.ui'>
+  <ui:with field="res" type="keke.edgebox.bokz.gwt.client.ui.MainBundle" />
+  <g:DockLayoutPanel unit="EM" styleName="main-outer">
+    <g:north size="1.5">
+      <g:HTML styleName="bbar {res.css.bbar}" ui:field="bokzBar">
+        <div class="{res.css.rightalign}">
+          <span class="settings">Settings</span>
+          <span class="signout">Sign Out</span>
+        </div>
+        <div style="clear:both"></div>
+      </g:HTML>
+    </g:north>
+    <g:center>
+      <g:SplitLayoutPanel>
+        <g:west size="200">
+          <g:StackLayoutPanel unit="EM" ui:field="stackPanel">
+            <g:stack>
+              <g:header size="2">
+                <span>Search Folders</span>
+              </g:header>
+              <g:HTML>
+              </g:HTML>
+            </g:stack>
+            <g:stack>
+              <g:header size="2">
+                <span>Categories</span>
+              </g:header>
+              <g:HTML />
+            </g:stack>
+            <g:stack>
+              <g:header size="2">
+                <span>Tags</span>
+              </g:header>
+              <g:HTML>
+              </g:HTML>
+            </g:stack>
+          </g:StackLayoutPanel>
+        </g:west>
+        <g:west size="400">
+          <g:HTMLPanel styleName="listPanel {res.css.listPanel}">
+            <div class="searchBar {res.css.searchBar}">
+              <input name="q"></input>
+              <button>Search</button>
+            </div>
+            <div class="toolBar {res.css.toolBar}"></div>
+            <k:BookInfoList ui:field="bookInfoList"
+              styleName="infoList {res.css.infoList}"></k:BookInfoList>
+          </g:HTMLPanel>
+        </g:west>
+        <g:center>
+          <g:HTML />
+        </g:center>
+      </g:SplitLayoutPanel>
+    </g:center>
+    <g:south size="2">
+      <g:HTML />
+    </g:south>
+  </g:DockLayoutPanel>
+</ui:UiBinder>

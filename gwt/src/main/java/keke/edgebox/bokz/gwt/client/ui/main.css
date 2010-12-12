@@ -1,0 +1,32 @@
+.bbar span {
+  cursor: pointer;
+}
+
+.bbar .rightalign {
+  float: right;
+}
+
+.listPanel .searchBar,.listPanel .toolBar {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+}
+
+.listPanel .searchBar {
+  top: 0px;
+}
+
+.listPanel .toolBar {
+  top: 30px;
+}
+
+.listPanel .infoList {
+  width: 100%;
+  height: 100%;
+  padding-top: 70px;
+}
+
+.listPanel .infoList table{
+  width: 100%;
+  height: 100%;  
+}

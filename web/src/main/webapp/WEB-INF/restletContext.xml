@@ -12,7 +12,15 @@
           <bean class="org.restlet.ext.spring.SpringRouter">
             <property name="attachments">
               <map>
-
+                <entry key="/a/">
+                  <bean class="keke.edgebox.restlet.filter.NormalizeUrlFilter">
+                    <constructor-arg ref="app.Context"/>
+                    <constructor-arg ref="appRouter"/>
+                    <constructor-arg>
+                      <array/>
+                    </constructor-arg>
+                  </bean>
+                </entry>
                 <entry key="/_s">
                   <bean class="keke.edgebox.restlet.filter.CacheFilter">
                     <constructor-arg ref="app.Context"/>
@@ -35,4 +43,11 @@
     </property>
   </bean>
   <util:property-path id="app.Context" path="bokzApplication.context"/>
+  <bean id="appRouter" class="org.restlet.ext.spring.SpringRouter">
+    <property name="defaultAttachment">
+      <bean class="keke.edgebox.bokz.web.page.HomePage">
+        <constructor-arg ref="velocityEngine"/>
+      </bean>
+    </property>
+  </bean>
 </beans>
